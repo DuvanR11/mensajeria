@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+
+<!-- Block image -->
+{% block image %}{% endblock image %}
+
+
+
+<!-- Sidebar content -->
+{% block sidebar-content %}
+    <!-- Welcome user -->
+   <p class="text-center"> Bienvenido: <span class="text-success ">{{user.get_username}}</span></p>
+    &nbsp;
+    <a href="{% url 'logout'}" class="btn btn-danger">Cerrar Sesion</a>
+{% endblock sidebar-content %}
+
+<!-- Page content  -->
+{% block content %}
+    &nbsp;
+    <div  class="container-fluid mt-3" style="width: 90%;">
+
+        <!-- Dashboard content -->
+        <div id="dashboard" class="hide">
+            {% include 'dashboard/dashboard.html' %}
+        </div>
+        &nbsp;
+
+        <!-- Buscador global -->
+        <form action="" id="global-search" class="hide">
+            <div class="input-group input-grou-sm mb-3">
+                <input type="text" name="q" class="form-control input-sm" placeholder="Buscador" value="{{ request.GET.q }}">
+                <button class="btn btn-secondary" title="buscar"><i class="fas fa-search"></i></button>
+                <a href="{url 'inbox'}" class="btn btn-dark" style="margin-left: 2px" title="Refrescar"><i class="fas fa-sync-alt"></i></a>
+            </div>
+        </form>
+
+        <!-- Tabla de mensajes -->
+        <div class="col-lg-12 hide">
+            <div style="margin-top: 5px">
+                <table class="table table-sm">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th style="width: 18%">Nombre</th>
+                            <th style="width: 13%">Celular</th>
+                            <th style="width: 18%">Correo</th>
+                            <th style="width: 18%">Persona</th>
+                            <th style="width: 15%">Recibido</th>
+                            <th style="width: 10%">estado</th>
+                            <th style="width: 8%; text-align: center;" colspan="2">acción</th>
+                        </tr>
+                    </thead>
+                    <!-- Data del backend -->
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
