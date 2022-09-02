@@ -124,6 +124,41 @@ CAMBIAR EL TEMA SWEETALERT
     color: #111;
     border: 1px solid #111;
 }
+/* -------------------------------
+CAMBIAR ESTILOS AL PAGINATOR
+---------------------------------*/
+.page-item.active .page-link{
+    columns: #fff;
+    background-color: #6c757d;
+    border: 1px soli #6c757d;
+}
+.pagination > li > a{
+    background-color: #fff;
+    color: #6c757d;
+}
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > span > a:focus,
+.pagination > span > a:hover{
+    color: #111;
+    background-color: #d3d3d3;
+    border: 1px solid #6c757d;
+    box-shadow: none;
+}
+/* ----------------------------------
+CAMBIAR ESTILOS MODAL PERSONALIZADA
+-------------------------------------*/
+.btn-modal{
+    width: 70px;
+}
+.btn-action{
+    width: 45px;
+}
+/* ----------------------------------
+ESTILOS DE QUE NO ENCUNTRE REGISTROS
+-------------------------------------*/
+
+
 /* --------------------------
 FOOTER
 -----------------------------*/

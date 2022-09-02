@@ -67,7 +67,7 @@
         <div class="offcanvas-body">
           <div class="d-grid gap-2">
             {% block sidebar-content %}
-                <a href="{% url 'inbox'}" class="btn btn-secondary">Logo</a>
+                <a href="{% url 'inbox' %}" class="btn btn-secondary">Logo</a>
             {% endblock sidebar-content %}
                 <hr><br>
                 <center class="mt-5">
@@ -89,12 +89,13 @@
 
     <!-- ======= INCLUDE ======= -->
     {% include 'modals/message.html' %}
+    {% include 'modals/logout.html' %}
 
     <!-- Mensajes desde el backend -->
     {% if form.errors %}
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
-        swal("Denied !", "Informacion correcta", "error")
+        swal("Denied !", "Informacion incorrecta", "error")
     </script>
     {% endif %}
 

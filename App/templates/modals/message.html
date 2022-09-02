@@ -10,31 +10,29 @@
 
 <!-- Modal Width -->
 {% block modal-width %}modal-xl{% endblock modal-width %}
-
+{% load crispy_forms_tags %}
 <!-- Form -->
 {% block form %}
+
     <form method="POST" action="send_message" autocomplete="off" enctype="multipart/form-data">
         {% csrf_token %}
-        
-        <!-- class="was-validated" -->
-        
         <div class="modal-body">
             <div class="mb-1">
                 <input type="text" class="form-control" name="name" maxlength="50" placeholder="Nombre">
             </div>
             <div class="mb-1">
-                <input type="text" class="form-control" name="phone" placeholder="Celular" >
+                <input type="number" class="form-control phone"  id="phone" name="phone" placeholder="Celular" >
             </div>
             <div class="mb-1">
-                <input type="text" class="form-control" name="email" maxlength="50" placeholder="Correo" >
+                <input type="email" class="form-control" name="email" maxlength="50" placeholder="Correo" >
             </div>
             <div class="mb-1">
                 <input type="text" class="form-control" name="subject" maxlength="25" placeholder="subject" >
             </div>
             <hr>
             <div class="form-group mb-2">
-                <textarea class="form-control" name="message" id="message" cols="30" rows="4" maxlength="500" ></textarea>
-            </div>
+                <textarea class="form-control" name="message" id="message" cols="30" rows="4" maxlength="1000" ></textarea>
+            </div> 
             <!-- Contador de caracteres -->
             <span id="remaining"></span>
             <hr>
@@ -45,14 +43,14 @@
                 <strong class="text-success">rar</strong> o <strong class="text-success">zip</strong>.
             </h6>
             <hr>
-            <div class="d-grid gap-2 mt-3">
+            <div class="d-grid gap-2 mt-3"> 
                 <button class="btn text-light" type="submit" style="background-color: #2e856e;">Enviar mensaje &nbsp;&nbsp;
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </div>
         </div>
         <!-- Entrada oculta -->
-        <input type="hidden" name="status" value="pending">
+        {% comment %} <input type="hidden" name="status" value="pending"> {% endcomment %}
     </form>
 {% endblock form %}
 

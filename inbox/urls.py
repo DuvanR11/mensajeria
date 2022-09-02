@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from App import views
-from inbox import settings
+# from inbox import settings
+from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -34,4 +35,12 @@ urlpatterns = [
     # =======================BACKEND=============================
   
     path('inbox/', views.inbox, name='inbox'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
+    # Eliminar registros
+    path('delete_message/<str:customer_id>', views.delete_message, name='delete_message'),
+    
+] 
+if settings.DEBUG:
+  urlpatterns +=static(
+      settings.MEDIA_URL, 
+      document_root=settings.MEDIA_ROOT
+      )
