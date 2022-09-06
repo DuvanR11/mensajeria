@@ -4,7 +4,7 @@
 {% block title %}Home{% endblock title %}
 
 <!--  Block Typed-->
-{% block typed %}{% endblock typed %}
+{% comment %} {% block typed %}{% endblock typed %} {% endcomment %}
 
 <!-- Slider -->
 {% block sidebar-content %}
@@ -28,8 +28,9 @@
                     <input type="checkbox" class="form-check-input" onclick="myFunction()" style="float: right;">
                 </div>
                 <div class="d-grid gap-2 mt-3">
-                    <input class="btn btn-success btn-sm mt-4 mb-3" type="submit" value="Enter" id="btn-enter">
+                    <input class="btn btn-success btn-sm mt-4 mb-3" type="submit" value="Ingresar" id="btn-enter">
                 </div>
+                <a href="{% url 'registrar' %}">¿No tienes cuenta?</a>
             </form>
             <center class="mt-5 mb-5">
                 <i class="bx bxs-send bx-rotate-270 mt-2 mb-2" id="login-watermark" style="margin-left: 10px;"></i>

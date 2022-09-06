@@ -28,15 +28,27 @@ urlpatterns = [
     
     path('', views.home, name='home'),
       # Path enviar mensaje
+      
     path('send_message', views.send_message, name='send_message'),
-    # Path login/logout
-    path('login/', include('django.contrib.auth.urls')),    
+    
+    # Registar y iniciar
+    path('login/', include('django.contrib.auth.urls')),
+    path('registrar/', views.registrar, name='registrar'), 
+    
+    # Funciones de usuario
+    path('ciudadano/', views.ciudadano, name='ciudadano'),
+    path('perfil/', views.ciudadano, name='perfil'),
+    path('sondeos/', views.ciudadano, name='sondeos'),
+    path('sondeosrealizados/', views.ciudadano, name='sondeosrealizados'),
     
     # =======================BACKEND=============================
   
     path('inbox/', views.inbox, name='inbox'),
-    # Eliminar registros
+
     path('delete_message/<str:customer_id>', views.delete_message, name='delete_message'),
+    
+   
+    
     
 ] 
 if settings.DEBUG:
@@ -44,3 +56,5 @@ if settings.DEBUG:
       settings.MEDIA_URL, 
       document_root=settings.MEDIA_ROOT
       )
+  
+#0b8e02

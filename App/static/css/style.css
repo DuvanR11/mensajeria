@@ -3,14 +3,20 @@ CONFIGURACIONES INICCIALES
 -----------------------------*/
 html,
 body{
-    height: 100%;
     margin: 0;
     max-width: 100%;
-    overflow: hidden;
+    background-image: url("https://img.freepik.com/vector-gratis/fondo-plano-20-julio-personas-banderas-colombianas_23-2149438202.jpg?w=2000");
+    background-position: center 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 /* --------------------------
 NAVBAR
 -----------------------------*/
+.navbar{
+    background-color: #0b8e02;
+}
 #btn-nav{
     float: right;
     margin-right: 25px;
@@ -162,6 +168,9 @@ ESTILOS DE QUE NO ENCUNTRE REGISTROS
 /* --------------------------
 FOOTER
 -----------------------------*/
+.footer{
+    background-color: #0b8e02;
+}
 .wrapper{
     min-height: 100%;
     margin-bottom: -50px;
